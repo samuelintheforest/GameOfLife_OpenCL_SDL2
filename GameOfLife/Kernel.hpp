@@ -16,13 +16,15 @@ namespace game_of_life
 		Kernel(const std::string& src);
 		~Kernel();
 
+		cl::Context m_KernelContext;
+		static cl::Device s_DefaultDevice;
+
 	protected:
 		static int setupFunctionCounter;
 		static std::vector<cl::Platform> s_AllPlatforms;
 		static cl::Platform s_DefaultPlatform;
 		static std::vector<cl::Device> s_AllDevices;
-		static cl::Device s_DefaultDevice;
-		cl::Context m_KernelContext;
+		
 		virtual void CompileKernels() = 0;
 		std::string m_ProgramSrc;
 	};

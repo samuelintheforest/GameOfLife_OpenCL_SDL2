@@ -71,16 +71,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\keres\Documents\libs\OpenCL-Headers-2023.04.17\;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\keres\Documents\libs\SDL2\SDL2-devel-2.26.3-VC\SDL2-2.26.3\include;C:\Users\keres\Documents\libs\OpenCL-Headers-2023.04.17\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Users\keres\Documents\libs\OpenCL-Headers-2023.04.17\;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\keres\Documents\libs\SDL2\SDL2-devel-2.26.3-VC\SDL2-2.26.3\include;C:\Users\keres\Documents\libs\OpenCL-Headers-2023.04.17\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\keres\Documents\libs\OpenCL-Headers-2023.04.17\;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\keres\Documents\libs\SDL2\SDL2-devel-2.26.3-VC\SDL2-2.26.3\include;C:\Users\keres\Documents\libs\OpenCL-Headers-2023.04.17\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Users\keres\Documents\libs\OpenCL-Headers-2023.04.17\;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\keres\Documents\libs\SDL2\SDL2-devel-2.26.3-VC\SDL2-2.26.3\include;C:\Users\keres\Documents\libs\OpenCL-Headers-2023.04.17\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -93,8 +93,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\keres\Documents\libs\intel_sw_tools\system_studio_2020\OpenCL\sdk\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\keres\Documents\libs\SDL2\SDL2-devel-2.26.3-VC\SDL2-2.26.3\lib\x64;C:\Users\keres\Documents\libs\intel_sw_tools\system_studio_2020\OpenCL\sdk\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenCL.lib;SDL2main.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -112,8 +112,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\keres\Documents\libs\intel_sw_tools\system_studio_2020\OpenCL\sdk\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\keres\Documents\libs\SDL2\SDL2-devel-2.26.3-VC\SDL2-2.26.3\lib\x64;C:\Users\keres\Documents\libs\intel_sw_tools\system_studio_2020\OpenCL\sdk\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenCL.lib;SDL2main.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -127,8 +127,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\keres\Documents\libs\intel_sw_tools\system_studio_2020\OpenCL\sdk\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\keres\Documents\libs\SDL2\SDL2-devel-2.26.3-VC\SDL2-2.26.3\lib\x64;C:\Users\keres\Documents\libs\intel_sw_tools\system_studio_2020\OpenCL\sdk\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenCL.lib;SDL2main.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -146,17 +146,19 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\keres\Documents\libs\intel_sw_tools\system_studio_2020\OpenCL\sdk\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\keres\Documents\libs\SDL2\SDL2-devel-2.26.3-VC\SDL2-2.26.3\lib\x64;C:\Users\keres\Documents\libs\intel_sw_tools\system_studio_2020\OpenCL\sdk\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenCL.lib;SDL2main.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DrawBoard.cpp" />
     <ClCompile Include="GameOfLife.cpp" />
     <ClCompile Include="ImageKernel.cpp" />
     <ClCompile Include="Kernel.cpp" />
     <ClCompile Include="MultMatrix3x3Kernel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DrawBoard.hpp" />
     <ClInclude Include="ImageKernel.hpp" />
     <ClInclude Include="Kernel.hpp" />
     <ClInclude Include="KernelSources.h" />

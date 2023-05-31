@@ -38,7 +38,29 @@ void game_of_life::Kernel::SetUpOpenCL()
 
         Kernel::s_DefaultDevice = Kernel::s_AllDevices[0];
         std::cout << "Using device: " << Kernel::s_DefaultDevice.getInfo<CL_DEVICE_NAME>() << "\n";
+
+        std::cout << "Maximum Width (3D): " << s_DefaultDevice.getInfo<CL_DEVICE_IMAGE3D_MAX_WIDTH>() << ", Max Height: " << s_DefaultDevice.getInfo<CL_DEVICE_IMAGE3D_MAX_WIDTH>() << ", Max Depth: " << s_DefaultDevice.getInfo<CL_DEVICE_IMAGE3D_MAX_DEPTH>() << std::endl;
+        
+        std::cout << "Image pitch alignment: " << s_DefaultDevice.getInfo<CL_DEVICE_IMAGE_PITCH_ALIGNMENT>() << std::endl;
+
+        std::cout << "Parallel compute units: " << s_DefaultDevice.getInfo<CL_DEVICE_MAX_COMPUTE_UNITS>() << std::endl;
+        
+        std::cout << "Maximum dimensions: " << s_DefaultDevice.getInfo<CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS>() << std::endl;
+
+        std::cout << "Maximum Frequency (MHz): " << s_DefaultDevice.getInfo<CL_DEVICE_MAX_CLOCK_FREQUENCY>() << std::endl;
+
+        int counter = 0;
+        for (auto& val : s_DefaultDevice.getInfo<CL_DEVICE_MAX_WORK_ITEM_SIZES>())
+        {
+            std::cout << "Dim(" << counter << "): " << val << std::endl;
+            counter++;
+        }
+
+        std::cout << "Max Device size: " << s_DefaultDevice.getInfo<CL_DEVICE_MAX_WORK_GROUP_SIZE>() << std::endl;
+
     }
+
+
 }
 
 game_of_life::Kernel::Kernel(const std::string& src)
@@ -50,10 +72,12 @@ game_of_life::Kernel::Kernel(const std::string& src)
 
     }
 
+
+
     // Create it's context
     m_KernelContext = { Kernel::s_DefaultDevice };
     m_ProgramSrc = src;
-    std::cout << this << "\n" << m_ProgramSrc << "\n";
+    std::cout << &this->m_KernelContext << "\n" << m_ProgramSrc << "\n";
     
 }
 
